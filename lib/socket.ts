@@ -4,7 +4,7 @@ let socket: Socket | null = null
 let currentAuthToken: string | null = null
 
 export function getSocket(token: string): Socket {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://54.83.74.33:4000'
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://54.83.74.33:4000'
   const tokenWithBearer = token.startsWith('Bearer') ? token : `Bearer ${token}`
   
   // IMPORTANT: socket.io-client does not expose `socket.handshake.auth` on the client.
@@ -59,5 +59,4 @@ export function disconnectSocket() {
     currentAuthToken = null
   }
 }
-
 

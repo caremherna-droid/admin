@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-export type User = { id: string; username: string; role: 'USER'|'ADMIN'|'BROADCASTER' }
+export type User = { id: string; username: string; email?: string; role: 'USER'|'ADMIN'|'BROADCASTER' }
 
 type AuthState = {
   token: string | null
